@@ -3,6 +3,10 @@ require_relative('../models/merchant')
 require_relative('../models/tag')
 require('pry')
 
+Tag.delete_all
+Merchant.delete_all
+Transaction.delete_all
+
 tag_1 = Tag.new({"name" => "coffee"})
 tag_1.save
 
@@ -22,6 +26,14 @@ merchant_2 = Merchant.new({"name" => "The Blue Blazer"})
 merchant_2.save
 
 merchant_3 = Merchant.new({"name" => "Starbucks"})
+merchant_3.save
 
-binding.pry
-nil
+ transaction_1 = Transaction.new({
+   "amount" => "5",
+   "spend_date" => "2017-06-10",
+   "merchant_id" => merchant_1.id,
+   "tag_id" => tag_1.id
+   })
+   transaction_1.save
+  binding.pry
+  nil
