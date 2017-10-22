@@ -28,12 +28,21 @@ merchant_2.save
 merchant_3 = Merchant.new({"name" => "Starbucks"})
 merchant_3.save
 
- transaction_1 = Transaction.new({
-   "amount" => "5",
-   "spend_date" => "2017-06-10",
-   "merchant_id" => merchant_1.id,
-   "tag_id" => tag_1.id
-   })
-   transaction_1.save
+transaction_1 = Transaction.new({
+  "amount" => "5",
+  "spend_date" => "2017-06-10",
+  "merchant_id" => merchant_1.id,
+  "tag_id" => tag_1.id
+  })
+  transaction_1.save
+
+
+  transaction_2 = Transaction.new({
+    "amount" => "3",
+    "spend_date" => "2017-06-10",
+    "merchant_id" => merchant_2.id,
+    "tag_id" => tag_3.id
+    })
+    transaction_2.save
   binding.pry
   nil
