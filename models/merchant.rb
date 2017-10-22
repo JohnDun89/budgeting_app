@@ -7,6 +7,27 @@ class Merchant
     @name = options
   end
 
+  def save
+    sql = "
+    INSERT INTO merchants
+    (
+    name
+    )
+    VALUES
+    (
+    1$
+    )
+    "
+    values = [@name]
+    results = SqlRunner.new( sql, values )
+    @id = results.first['id'].to_i
+  end
 
+  def self.all
+    sql ="SELECT * FROM merchants"
+    values = []
+    results = SqlRunner.new( sql, values )
+    return results.map{|mercahant| Merchant.new(mercahant)}
+  end
 
 end
