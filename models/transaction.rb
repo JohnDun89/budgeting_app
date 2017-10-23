@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-require_relative('../db/sql_runner')
+
 
 
 class Transaction
@@ -119,7 +119,15 @@ class Transaction
   end
 #------------------------------------------  OTHER CLASS METHODS -------------->
 
+  def self.total_spent
+    results = self.all
+    results.sum {|spend| spend.amount}        #.sum enumerates through the array adding all items. thinking about it map wouldent do this as I need to add all the values together.
+  end
 
+  def self.find_spending_by_tag(tag)
+    results = self.find_tag_name(tag)
+    find_total = results.sum {|spend| spend.amount}
+  end
 
 
   def current_time
