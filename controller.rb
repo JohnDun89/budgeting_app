@@ -16,3 +16,9 @@ get '/cashboard/show' do
   @transactions = Transaction.all
   erb (:show)
 end
+
+get '/cashboard/add' do
+  @transaction = Transaction.new
+  @transaction.save
+  erb (:created)
+end
