@@ -1,6 +1,9 @@
 <h1>Your Total Spending Budget</h1>
-<% total = @transactions_for_total.total_spent %>
-<%= total %>
 
+<%= @spend %>
 
 <h2> Your Remaing Budget</h2>
+
+<!-- <% remaining_budget = @budget =- @spend %> -->
+
+<%= @amount - @spend %>

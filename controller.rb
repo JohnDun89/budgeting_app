@@ -7,7 +7,8 @@ require_relative( './models/tag.rb' )
 
 
 get '/cashboard' do
-  @transactions_for_total = Transaction.all
+  @spend = Transaction.total_spent
+  @amount = Transaction.get_budget
   erb (:index)
 end
 

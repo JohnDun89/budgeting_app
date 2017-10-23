@@ -7,13 +7,15 @@ class Transaction
   attr_reader :id
   attr_accessor :amount, :spend_date, :merchant_id, :tag_id
 
+  @budget = 450
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @amount = options['amount'].to_i
     @spend_date = options['spend_date']
     @tag_id = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
-    @budget = 450
+
   end
 
   #-------------------------------------------  CRUD METHODS  -------------------->
@@ -135,6 +137,9 @@ class Transaction
     find_total = results.sum {|spend| spend.amount}
   end
 
+  def self.get_budget
+    return @budget
+  end
 
   def current_time
     time = Time.new
