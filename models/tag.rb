@@ -54,7 +54,7 @@ class Tag
     SqlRunner.run(sql, values)
   end
 
-  def self.find_tag_name(name)
+  def self.find_tag_by_name(name)
     sql = "SELECT * FROM tags
     WHERE name = $1"
     values = [name]

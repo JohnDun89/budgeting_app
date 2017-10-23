@@ -1,0 +1,10 @@
+<ul>
+  <li>
+    <a href="cashboard/add">Add a new transaction</a>
+  </li>
+</ul>
+
+
+<% @transactions.each do |transaction| %>
+<p><%= transaction.amount %> <%= transaction.spend_date %> <%=transaction.find_by_merchant.name %> <%= transaction.find_by_tag.name %></p>
+<% end %>

@@ -73,15 +73,15 @@ class Transaction
   end
   #------------------------------------------   FINDING METHODS ----------------->
 
-  def find_merchant
-    sql = "SELECT FROM merchants
+  def find_by_merchant
+    sql = "SELECT * FROM merchants
     WHERE id = $1"
-    vaulues = [@merchant_id]
+    values = [@merchant_id]
     results = SqlRunner.run( sql, values)
     return Merchant.new( results.first )
   end
 
-  def self.find_transaction_id(id) #static method. these are related to a transaction but not a specific instance of a transaction as you pass that in.
+  def self.find_transaction_by_id(id) #static method. these are related to a transaction but not a specific instance of a transaction as you pass that in.
     sql = "SELECT * FROM transactions
     WHERE id = $1"
     values = [id]
@@ -90,15 +90,15 @@ class Transaction
   end
 
 
-  def find_tag()
-    sql = "SELECT FROM tags
+  def find_by_tag()
+    sql = "SELECT * FROM tags
     WHERE id = $1"
     values = [@tag_id]
     results = SqlRunner.run(sql, values)
-    return Tag.new( results,first )
+    return Tag.new( results.first )
   end
 
-  def self.find_merchant_name(name)
+  def self.find_merchant_by_name(name)
     sql = "SELECT merchants.name, transactions.* FROM merchants
     INNER JOIN transactions
     ON merchants.id = transactions.merchant_id
@@ -109,7 +109,7 @@ class Transaction
   end
 
 
-  def self.find_tag_name(name)
+  def self.find_tag_by_name(name)
     sql = "SELECT tags.name, transactions.* FROM tags
     INNER JOIN transactions
     ON tags.id = transactions.tag_id
@@ -126,12 +126,12 @@ class Transaction
   end
 
   def self.find_spending_by_tag(tag)
-    results = self.find_tag_name(tag)
+    results = self.find_by_tag_name(tag)
     find_total = results.sum {|spend| spend.amount}
   end
 
   def self.find_spending_by_merchant(merchant)
-    results = self.find_merchant_name(merchant)
+    results = self.find_by_merchant_name(merchant)
     find_total = results.sum {|spend| spend.amount}
   end
 
