@@ -15,7 +15,7 @@ class Transaction
     @merchant_id = options['merchant_id'].to_i
   end
 
-#-------------------------------------------  CRUD METHODS  -------------------->
+  #-------------------------------------------  CRUD METHODS  -------------------->
 
   def save
     sql = " INSERT INTO transactions
@@ -70,7 +70,7 @@ class Transaction
     values = [@amount, @spend_date, @tag_id, @merchant_id, @id]
     SqlRunner.run(sql, values)
   end
-#------------------------------------------   FINDING METHODS ----------------->
+  #------------------------------------------   FINDING METHODS ----------------->
 
   def find_merchant
     sql = "SELECT FROM merchants
@@ -117,7 +117,7 @@ class Transaction
     results = SqlRunner.run(sql, values)
     return results.map {|tag| Transaction.new(tag)}
   end
-#------------------------------------------  OTHER CLASS METHODS -------------->
+  #------------------------------------------  OTHER CLASS METHODS -------------->
 
   def self.total_spent
     results = self.all
@@ -126,6 +126,11 @@ class Transaction
 
   def self.find_spending_by_tag(tag)
     results = self.find_tag_name(tag)
+    find_total = results.sum {|spend| spend.amount}
+  end
+
+  def self.find_spending_by_merchant(merchant)
+    results = self.find_merchant_name(merchant)
     find_total = results.sum {|spend| spend.amount}
   end
 
