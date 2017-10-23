@@ -13,6 +13,7 @@ class Transaction
     @spend_date = options['spend_date']
     @tag_id = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
+    @budget = 450
   end
 
   #-------------------------------------------  CRUD METHODS  -------------------->
