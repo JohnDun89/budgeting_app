@@ -13,15 +13,15 @@
 </section>
 
 
-<table>
-<tr>
+<table class="grid aligner">
+<tr class="table-row">
   <th>Amount</th>
   <th>Date</th>
   <th>Merchant</th>
   <th>Tag</th>
 </tr>
 
-<tr>
+<tr class="table-row">
 <% @transactions.each do |transaction| %>
 <td><%= transaction.amount %></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
 </tr>

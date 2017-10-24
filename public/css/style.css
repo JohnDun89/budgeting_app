@@ -1,23 +1,43 @@
 body {
-   list-style-type: none;
+  align-content: center;
+  text-align: center;
 
+}
+
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 10px;
+}
+/*---------------------------------- table content ------------------------*/
+
+th {
+  margin: 5px;
+  padding: 10px;
+}
+
+td {
+  margin: 5px;
+  padding: 10px;
 }
 
 
 /*---------------------------------- flex box ------------------------*/
 .grid {
-  border: solid 1px black;
+
 
 }
 
 .grid-row {
   display: flex;
   flex-direction: column;
+  margin: 5px;
 }
 
 .cell {
   padding: 10px;
   flex: 1;
+  margin: 5px;
 }
 
 /*--------------------------------- Positioning  ----------------------------*/
