@@ -12,7 +12,7 @@ class Transaction
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @amount = options['amount'].to_i
-    @spend_date = options['spend_date']
+    @spend_date = options['spend_date'] if options['spend_date'] != nil
     @tag_id = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
 
@@ -24,16 +24,15 @@ class Transaction
     sql = " INSERT INTO transactions
     (
     amount,
-    spend_date,
     tag_id,
     merchant_id
     )
     VALUES
     (
-    $1, $2, $3, $4
+    $1, $2, $3
     )
     RETURNING id"
-    values = [@amount, @spend_date, @tag_id, @merchant_id]
+    values = [@amount, @tag_id, @merchant_id]
     results = SqlRunner.run(sql, values)
     @id = results.first['id'].to_i
   end
@@ -156,7 +155,7 @@ class Transaction
     return @budget
   end
 
-  def current_time
+  def self.current_time
     time = Time.new
     return time
   end

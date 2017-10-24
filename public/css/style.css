@@ -1,3 +1,69 @@
 body {
-text-align: center;
+   list-style-type: none;
+
+}
+
+
+/*---------------------------------- flex box ------------------------*/
+.grid {
+  border: solid 1px black;
+
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  padding: 10px;
+  flex: 1;
+}
+
+/*--------------------------------- Positioning  ----------------------------*/
+
+
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  max-width: 50%;
+}
+
+.aligner-item--top {
+  align-self: flex-start;
+}
+
+.aligner-item--bottom {
+  align-self: flex-end;
+}
+
+
+
+/*--------------------------------- Sizing on Devices ----------------------------*/
+
+@media all and (min-width: 480px )   {
+
+.grid-row-sm{
+  flex-direction: row;
+}
+
+}
+
+@media all and ( min-width: 720px )  {
+
+.grid-row-md{
+  flex-direction: row;
+
+}
+
+}
+
+@media all and ( min-width: 960px )  {
+
+.grid-row-lg{
+  flex-direction: row;
 }

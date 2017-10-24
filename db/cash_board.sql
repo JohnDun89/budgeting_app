@@ -20,7 +20,7 @@ CREATE TABLE transactions
 (
   id SERIAL8 PRIMARY KEY,
   amount INT8,
-  spend_date DATE,
+  spend_date DATE DEFAULT current_date,
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE
 );

@@ -1,14 +1,18 @@
-<ul>
+<section class="grid aligner">
+<ul class="grid-row grid-row-sm aligner">
   <li>
-    <a href="/cashboard/add">Add a New Transaction</a>
+    <a href="/cashboard/add" class="cell aligner-item">Add a New Transaction</a>
   </li>
   <li>
-    <a href="/cashboard/filter_tag">Search Transactions by Tag</a>
+    <a href="/cashboard/filter_tag" class="cell aligner-item">Search Transactions by Tag</a>
   </li>
   <li>
-    <a href="/cashboard/filter_merchant">Search Transactions by Merchant</a>
+    <a href="/cashboard/filter_merchant" class="cell aligner-item">Search Transactions by Merchant</a>
   </li>
 </ul>
+</section>
+
+
 <table>
 <tr>
   <th>Amount</th>
@@ -21,5 +25,10 @@
 <% @transactions.each do |transaction| %>
 <td><%= transaction.amount %></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
 </tr>
+
 <% end %>
 </table>
+
+<p>Total Amount spent</p>
+<% total = @transactions.sum {|spend| spend.amount} %>
+<p><%= total %></p>
