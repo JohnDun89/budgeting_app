@@ -1,0 +1,25 @@
+<p>Filter by tag </p>
+
+<% @transactions.each do |transaction| %>
+<p><%= transaction.amount %> <%= transaction.spend_date %> <%=transaction.find_by_merchant.name %> <%= transaction.find_by_tag.name %></p>
+<% end %>
+
+<form method="post" action="/cashboard/tag">
+
+
+
+  <label for tag="tag-field">Tag</label>
+  <select
+  name="tag"
+  id="tag-field"
+  >
+
+  <% @tags.each do |tag| %>
+  <option value="<%= tag.id%>"><%= tag.name %></option>
+
+<% end %>
+ </select>
+<input type="submit" value="submit"/>
+
+
+ </form>

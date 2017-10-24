@@ -1,10 +1,25 @@
 <ul>
   <li>
-    <a href="cashboard/add">Add a new transaction</a>
+    <a href="/cashboard/add">Add a New Transaction</a>
+  </li>
+  <li>
+    <a href="/cashboard/filter_tag">Search Transactions by Tag</a>
+  </li>
+  <li>
+    <a href="/cashboard/filter_merchant">Search Transactions by Merchant</a>
   </li>
 </ul>
+<table>
+<tr>
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Merchant</th>
+  <th>Tag</th>
+</tr>
 
-
+<tr>
 <% @transactions.each do |transaction| %>
-<p><%= transaction.amount %> <%= transaction.spend_date %> <%=transaction.find_by_merchant.name %> <%= transaction.find_by_tag.name %></p>
+<td><%= transaction.amount %></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
+</tr>
 <% end %>
+</table>

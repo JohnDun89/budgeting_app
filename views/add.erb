@@ -1,1 +1,51 @@
-<form method="post" action=""> 
+<form method="post" action="/cashboard">
+  <label for="amount">Amount Spent</label>
+  <input
+  type="text"
+  name="amount"
+  id="name-field"
+  />
+
+<!--      drop down for merchant                  -->
+
+  <label for ="merchant-field">Merchant</label>
+  <select
+  name="merchant_id"
+  id="merchant-field"
+  >
+
+  <% @merchants.each do |merchant| %>
+  <option value="<%= merchant.id%>"><%= merchant.name %></option>
+
+<% end %>
+ </select>
+
+
+
+ <label for ="tag-field">Tag</label>
+ <select
+ name="tag_id"
+ id="tag-field"
+ >
+
+ <% @tags.each do |tag| %>
+ <option value="<%= tag.id%>"><%= tag.name %></option>
+
+<% end %>
+
+<input type="submit" value="add transaction"/>
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+<p>Add things </p>
