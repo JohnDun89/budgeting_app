@@ -1,12 +1,10 @@
+
+
+
+
+<form method="post" class="grid-stye" action="/cashboard/tag">
+
 <p>Filter by tag </p>
-
-<% @transactions.each do |transaction| %>
-<p><%= transaction.amount %> <%= transaction.spend_date %> <%=transaction.find_by_merchant.name %> <%= transaction.find_by_tag.name %></p>
-<% end %>
-
-<form method="post" action="/cashboard/tag">
-
-
 
   <label for tag="tag-field">Tag</label>
   <select
@@ -18,8 +16,27 @@
   <option value="<%= tag.id%>"><%= tag.name %></option>
 
 <% end %>
+</table>
  </select>
 <input type="submit" value="submit"/>
 
 
  </form>
+
+<table class="grid-stye">
+<tr class="grid-stye">
+  <th>Amount</th>
+  <th>Date</th>
+  <th>Merchant</th>
+  <th>Tag</th>
+</tr>
+
+<tr class="table-row grid">
+<% @transactions.each do |transaction| %>
+<td><p>£<%= transaction.amount %></p></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
+</tr>
+<% end %>
+
+
+
+ </div>
