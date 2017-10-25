@@ -13,6 +13,7 @@ html{
 body {
   align-content: center;
   text-align: center;
+  padding: 5px;
 }
 
 
@@ -99,11 +100,17 @@ label {
 .grid-stye{
   background-color: white;
   max-width: 500px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 15px;
+  border-width: 10px;
+
 
 }
 
 .grid {
-
 
 }
 
@@ -121,6 +128,12 @@ label {
 
 /*--------------------------------- Positioning  ----------------------------*/
 
+.center{
+  align-items: center;
+  justify-content: center;
+
+
+}
 
 .aligner {
   display: flex;

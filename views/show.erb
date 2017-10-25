@@ -1,5 +1,5 @@
 <section class="grid aligner tx-menu">
-<ul class="grid-row grid-row-sm aligner">
+<ul class="grid-row grid-row-sm aligner grid-stye ">
   <li>
     <a href="/cashboard/add" class="cell aligner-item">Add a New Transaction</a>
   </li>
@@ -13,22 +13,23 @@
 </section>
 
 
-<table class="grid-stye aligner">
-<tr class="grid-stye table-row">
+<table class="grid-stye">
+<tr class="grid-stye">
   <th>Amount</th>
   <th>Date</th>
   <th>Merchant</th>
   <th>Tag</th>
 </tr>
 
-<tr class="grid-stye table-row grid">
+<tr class="grid-stye table-row grid ">
 <% @transactions.each do |transaction| %>
 <td><p>£<%= transaction.amount %></p></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
 </tr>
 
 <% end %>
 </table>
-
+<div class="grid-stye">
 <p>Total Amount spent</p>
 <% total = @transactions.sum {|spend| spend.amount} %>
 <p>£<%= total %></p>
+</div>
