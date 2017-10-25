@@ -1,7 +1,60 @@
+@charset "utf-8";
+
+html{
+  color: #000;
+  background-color: #fff;
+  font-family: 'Raleway', sans-serif;
+  background-image: url('../images/john_duncan_print-3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 body {
   align-content: center;
   text-align: center;
+}
 
+
+
+nav {
+
+object-position: center;
+background-color: #fff;
+border: solid #fff;
+width: 100%;
+height: 100px;
+color: black;
+margin-left: -5px;
+padding: 10px;
+border-radius: 5px;
+border-width: 8px;
+text-align: center;
+z-index: 1;
+font-family: 'Oswald', sans-serif;
+font-style: bold;
+font-size: 30px;
+font-weight: 100;
+}
+
+}
+nav ul {
+  list-style-type: none;
+  padding-right: 30px;
+}
+nav ul li {
+  display: inline;
+  padding-right: 10px;
+}
+nav ul li a {
+  color: black;
+  text-decoration: none;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+nav ul li a:hover {
+  color: #ff5f41;
+  font-weight: bolder;
 }
 
 ul {
@@ -9,7 +62,18 @@ ul {
   margin: 5px;
   padding: 10px;
 }
+
+
+form-style {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+
 /*---------------------------------- table content ------------------------*/
+
+
+
 
 th {
   margin: 5px;
@@ -21,8 +85,23 @@ td {
   padding: 10px;
 }
 
+label {
+  padding: 5px;
+}
 
-/*---------------------------------- flex box ------------------------*/
+#submit {
+  margin: 15px;
+}
+
+
+/*---------------------------------- flex box --------------------------------*/
+
+.grid-stye{
+  background-color: white;
+  max-width: 500px;
+
+}
+
 .grid {
 
 
@@ -63,7 +142,7 @@ td {
 
 
 
-/*--------------------------------- Sizing on Devices ----------------------------*/
+/*--------------------------------- Sizing on Devices ------------------------*/
 
 @media all and (min-width: 480px )   {
 

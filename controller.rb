@@ -4,6 +4,7 @@ require( 'pry-byebug' )
 require_relative( './models/transaction.rb' )
 require_relative( './models/merchant.rb' )
 require_relative( './models/tag.rb' )
+require_relative( './models/quotes.rb')
 
 
 get '/cashboard' do
@@ -31,6 +32,7 @@ post '/cashboard' do
 end
 
 get '/success' do
+  @quotes = Quotes.all
   erb (:success)
 end
 
