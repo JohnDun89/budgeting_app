@@ -4,7 +4,7 @@ html{
   color: rgba(4,4,4,1.00);
   background-color: #EDEAE5;
   font-family: 'Raleway', sans-serif;
-  background-image: url('../images/trees.jpg');
+  background-image: url('../images/mountain.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -93,6 +93,11 @@ form-style {
 /*---------------------------------- table content ------------------------*/
 
 
+.amount{
+  font-weight: 700;
+  font-family: 'Eczar';
+  font-size: 20px;
+}
 
 
 th {
@@ -154,7 +159,7 @@ label {
 .grid-stye{
   background-color: rgba(242,241,232,.88);
   border: solid white;
-  max-width: 500px;
+  max-width: 700px;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;

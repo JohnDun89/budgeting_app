@@ -25,15 +25,15 @@
 
 <table class="grid-stye">
 <tr class="grid-stye">
-  <th>Amount</th>
-  <th>Date</th>
-  <th>Merchant</th>
-  <th>Tag</th>
+  <th class="amount">Amount</th>
+  <th class="amount">Date</th>
+  <th class="amount">Merchant</th>
+  <th class="amount">Tag</th>
 </tr>
 
 <tr class="table-row grid">
 <% @transactions.each do |transaction| %>
-<td><p>£<%= transaction.amount %></p></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name %></td>
+<td><p class="amount">£<%= transaction.amount %></p></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name.capitalize %></td>
 </tr>
 <% end %>
 
