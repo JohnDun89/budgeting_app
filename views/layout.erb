@@ -8,17 +8,20 @@
 </head>
 <body>
   <main>
-    <div id="navigation" >
+    <div>
       <nav class="grid aligner">
         <ul class="grid-row grid-row-sm aligner">
           <li>
-            <a href="/cashboard" class="cell aligner-item">Budget</a>
+            <a href="/cashboard"
+   class=" budget cell aligner-item <%= "page-on" if request.path_info == '/cashboard' %>">Budget</a>
           </li>
           <li>
-            <a href="/cashboard/add" class="cell aligner-item">Add Transaction</a>
+            <a href="/cashboard/add"
+            class="add-tx cell aligner-item <%= "page-on" if request.path_info == '/cashboard/add' %>">Add Transaction</a>
           </li>
           <li>
-            <a href="/cashboard/show" class="cell aligner-item">Show Transactions</a>
+            <a href="/cashboard/show"
+            class="show-tx cell aligner-item <%= "page-on" if request.path_info == '/cashboard/show' %>">Show Transactions</a>
           </li>
         </ul>
       </nav>

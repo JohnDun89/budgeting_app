@@ -81,6 +81,7 @@ ul li a {
 }
 ul li a:hover {
   color: rgba(222,122,66,1.00);
+  font-style: italic;
   font-weight: bolder;
 }
 
@@ -89,10 +90,17 @@ form-style {
   margin-top: 10px;
 }
 
-#navigation nav ul li a:current{
-   color: blue;
-   background:#f1d74c;
+
+
+
+.page-on {
+  color: rgba(222,122,66,.90);
+  text-decoration: underline;
+  text-decoration-style: double;
+  font-size: 35px;
 }
+
+
 /*---------------------------------- table content ------------------------*/
 
 
@@ -170,11 +178,11 @@ label {
 .grid-stye{
   background-color: rgba(242,241,232,.88);
   border: solid white;
-  max-width: 700px;
+  max-width: 780px;
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
-  padding: 15px;
+  padding: 20px;
   border-radius: 15px;
   border-width: 4px;
 
@@ -211,8 +219,8 @@ label {
 }
 
 .spacing {
-  margin: 2px;
-  padding: 2px;
+  margin: 5px;
+  padding: 10px;
   font-size: 20px;
   line-height: 35px;
 }
