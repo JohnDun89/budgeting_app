@@ -146,12 +146,18 @@ label {
   font-family: 'Eczar', sans-serif;
 }
 
+#display-amount-left{
+  font-size: 60px;
+  color: green;
+  font-family: 'Eczar', sans-serif;
+}
+
 #submit{
   align-content: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  font-size: 20
+  font-size: 20;
 
 }
 /*---------------------------------- flex box --------------------------------*/
@@ -164,6 +170,20 @@ label {
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
+  border-radius: 15px;
+  border-width: 4px;
+
+
+}
+
+.grid-stye-main{
+  background-color: rgba(242,241,232,.88);
+  border: solid white;
+  max-width: 500px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
   border-radius: 15px;
   border-width: 4px;
 
@@ -190,11 +210,20 @@ label {
   margin: 5px;
 }
 
+.form-left-justify{
+  text-align: left;
+  margin: 10px;
+
+
+}
+
 /*--------------------------------- Positioning  ----------------------------*/
 
 .center{
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aligner {

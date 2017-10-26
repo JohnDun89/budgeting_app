@@ -1,11 +1,13 @@
-<section class="main-text grid-stye">
+<section class="main-text grid-stye-main">
 <h1 class="total-main">Spent</h1>
 
 <p id="display-amount-main">£<%= @spend %></p>
+</section>
 
+<section class="main-text grid-stye-main">
 <h2 class="total-main"> Remaing</h2>
 
 <!-- <% remaining_budget = @budget =- @spend %> -->
 
-<p id="display-amount-main">£<%= @amount - @spend %></p>
+<p id="display-amount-left">£<%= @amount - @spend %></p>
 </section>

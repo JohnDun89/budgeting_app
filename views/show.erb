@@ -26,9 +26,14 @@
 <td><p class="amount">£<%= transaction.amount %></p></td><td> <%= transaction.spend_date %></td><td> <%=transaction.find_by_merchant.name %></td><td> <%= transaction.find_by_tag.name.capitalize %></td>
 </tr>
 
+
+<!-- <tr><p class="total">Total Amount spent</p>
+<% total = @transactions.sum {|spend| spend.amount} %>
+<p class="total" id="display-amount">£<%= total %></p></tr> -->
+
 <% end %>
-</table>
 <div class="grid-stye">
 <p class="total">Total Amount spent</p>
 <% total = @transactions.sum {|spend| spend.amount} %>
 <p class="total" id="display-amount">£<%= total %></p>
+</table>
