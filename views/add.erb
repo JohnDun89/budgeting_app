@@ -1,41 +1,44 @@
 
 <form method="post" action="/cashboard" class="grid-stye">
-  <label class="aligner-item form-left-justify" for="name-field">Amount Spent :</label>
+  <div class="field"
+  <label  for="name-field">Amount Spent :</label>
   <input
   type="text"
   name="amount"
   id="name-field"
   />
+</div>
 
 <!--      drop down for merchant                  -->
-
-  <label  class="grid-row" for="merchant-field">Merchant</label>
+<div class="field">
+  <label  for="merchant-field">Merchant</label>
   <select
   name="merchant_id"
   id="merchant-field"
-
   >
 
   <% @merchants.each do |merchant| %>
-  <option class=" grid-row" value="<%= merchant.id%>"><%= merchant.name %></option>
+  <option value="<%= merchant.id%>"><%= merchant.name %></option>
 
-<% end %>
- </select>
+  <% end %>
+</select>
+</div>
 
 
-
- <label class="  grid-row" for="tag-field">Tag</label>
+<div class="field">
+ <label for="tag-field">Tag</label>
  <select
  name="tag_id"
  id="tag-field"
  >
 
  <% @tags.each do |tag| %>
- <option class=" grid-row" value="<%= tag.id%>"><%= tag.name %></option>
+ <option  value="<%= tag.id%>"><%= tag.name %></option>
 
 <% end %>
+</div>
 
-<input id="submit" class=" grid-row" type="submit" value="add transaction"/>
+<input id="submit" class="field grid-row" type="submit" value="add transaction"/>
 
 
 

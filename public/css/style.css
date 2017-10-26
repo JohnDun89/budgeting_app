@@ -89,7 +89,10 @@ form-style {
   margin-top: 10px;
 }
 
-
+#navigation nav ul li a:current{
+   color: blue;
+   background:#f1d74c;
+}
 /*---------------------------------- table content ------------------------*/
 
 
@@ -137,6 +140,8 @@ label {
 #display-amount{
   font-size: 40px;
   font-style: italic;
+  color: rgba(157,5,24,1.00);
+
 
 }
 
@@ -176,6 +181,21 @@ label {
 
 }
 
+.grid-stye-form{
+  background-color: rgba(242,241,232,.88);
+  border: solid white;
+  max-width: 700px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 15px;
+  border-width: 4px;
+  text-align: left;
+}
+
+
+
 .grid-stye-main{
   background-color: rgba(242,241,232,.88);
   border: solid white;
@@ -210,14 +230,16 @@ label {
   margin: 5px;
 }
 
-.form-left-justify{
-  text-align: left;
-  margin: 10px;
 
-
-}
 
 /*--------------------------------- Positioning  ----------------------------*/
+
+.field {
+  padding: 10px;
+  text-align: left;
+  font-size: 25px;
+}
+
 
 .center{
   align-items: center;
